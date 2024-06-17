@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -35,6 +36,18 @@ class PostController extends Controller
             'title' => $post->title,
             'post' => $post,
             'active' => 'posts'
+        ]);
+    }
+
+    public function category(Request $request) {
+        $categorySlug = $request->query('category');
+        $category = Category::where('slug', $categorySlug)->firstOrFail();
+        $posts = $category->posts()->with(['category', 'user'])->get();
+
+        return view('posts', [
+            'title' => "Posts in Category: $category->name",
+            'posts' => $posts,
+            'active' => 'categories'
         ]);
     }
 }

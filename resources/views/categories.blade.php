@@ -11,9 +11,7 @@
                             <div class="card-img-overlay d-flex align-items-center">
                                 <h5 class="card-title text-center flex-fill p-4 fs-3" style="background: rgba(0,0,0,0.7)">
                                     {{ $category->name }}
-
                                 </h5>
-
                             </div>
                         </div>
                     </a>
@@ -21,16 +19,4 @@
             @endforeach
         </div>
     </div>
-
-
-
-
-
-    <ul>
-        <li></li>
-        <h2>
-            <a href="/categories/{{ $category->slug }}">{{ $category->name }}</a>
-        </h2>
-        </li>
-    </ul>
 @endsection

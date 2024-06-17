@@ -56,7 +56,7 @@
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label @error('body') is-invalid @enderror">Body</label>
-                <input type="text" class="form-control" id="body" name="body" value="{{ old('body') }}">
+                <textarea style="height: 200px" class="form-control @error('body') is-invalid @enderror" id="body" name="body">{{ old('body') }}</textarea>
                 @error('body')
                     <div class="invalid-feedback">
                         {{ $message }}

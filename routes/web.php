@@ -10,12 +10,12 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardPostController;
 
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Home',
-        'active' => 'home'
-    ]);
-});
+// Route::get('/', function () {
+//     return view('home', [
+//         'title' => 'Home',
+//         'active' => 'home'
+//     ]);
+// });
 
 Route::get('/about', function () {
     return view('about', [
@@ -25,7 +25,7 @@ Route::get('/about', function () {
 });
 
 // Blog posts
-Route::get('/posts', [PostController::class, 'index'])->name('posts');
+Route::get('/', [PostController::class, 'index'])->name('posts');
 Route::get('/posts/{slug}', [PostController::class, 'show']);
 
 // Categories
@@ -36,6 +36,9 @@ Route::get('/categories', function () {
         'active' => 'categories'
     ]);
 });
+
+// Posts by Category
+Route::get('/posts', [PostController::class, 'category']);
 
 // Authors
 Route::get('/authors/{author:username}', function (User $author) {
