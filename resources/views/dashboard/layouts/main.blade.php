@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/css/dashboard.css" rel="stylesheet">
+    
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
     <!-- Document Title -->
     <title>Blogify | Dashboard</title>
 </head>

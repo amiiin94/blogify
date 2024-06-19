@@ -56,7 +56,7 @@
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label @error('body') is-invalid @enderror">Body</label>
-                <textarea style="height: 200px" class="form-control @error('body') is-invalid @enderror" id="body" name="body">{{ old('body') }}</textarea>
+                <textarea id="body" name="body" class="form-control @error('body') is-invalid @enderror">{{ old('body') }}</textarea>
                 @error('body')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -99,5 +99,9 @@
                 imgPreview.src = oFREvent.target.result;
             };
         }
+
+        CKEDITOR.replace('body', {
+            height: 500
+        });
     </script>
 @endsection
